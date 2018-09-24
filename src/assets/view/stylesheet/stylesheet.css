@@ -115,12 +115,44 @@ a{
 .btn.active, .btn:active{
 	box-shadow: none;
 }
-@media (min-width:1200px) and (max-width: 1589px) {
+
+@media (min-width: 992px) and (max-width: 1000px) {
+	.container {
+		width: 850px;
+	}	
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+	.container {
+		width: 900px;
+	}	
+}
+
+@media (min-width:1200px) and (max-width: 1300px) {
     .container {
-        width: 1170px;
+        width: 1000px;
     }
 }
-@media (min-width:1590px) {
+@media (min-width:1300px) and (max-width: 1400px) {
+    .container {
+        width: 1100px;
+    }
+}
+@media (min-width:1400px) and (max-width: 1589px) {
+    .container {
+        width: 1200px;
+    }
+}
+@media (min-width:1589px) and (max-width: 1700px) {
+    .container {
+        width: 1350px;
+    }
+}
+@media (min-width:1700px) and (max-width: 1850px) {
+    .container {
+        width: 1450px;
+    }
+}
+@media (min-width:1850px) {
     .container {
         width: 1560px;
     }
