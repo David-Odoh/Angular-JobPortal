@@ -17,8 +17,7 @@
 .tourism, .search, .vacancies {
     padding: 30px 30px;
     text-align: center;
-    border-left: 1px solid rgba(0, 176, 80, .2); 
-    border-right: 1px solid rgba(0, 176, 80, .2); 
+    border: 1px solid rgba(0, 176, 80, .2); 
 }
 .vacancies {
  border-bottom: 7px solid #00b050;
