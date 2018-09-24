@@ -1,0 +1,235 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+div:focus {
+    outline: none;
+}
+
+div, a, textarea, label, text, 
+title, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+.move-center {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+body, .grey-area {
+    background-color: #f3f7f7 !important;
+}
+
+.blue-area {
+    background: linear-gradient(140deg,#002060 15%,#037bc1);
+}
+
+.margin-tp {
+    margin-top: 15px;
+}
+
+a {
+    color: #39424e;
+    transition: 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover, a:focus {
+    color: #00b050 !important;
+}
+
+.pull-up{
+    -webkit-transition:all .25s ease;
+    -o-transition:all .25s ease;
+    -moz-transition:all .25s ease;
+    transition:all .25s ease
+}
+    
+.pull-up:hover, .pull-up:focus {
+    -webkit-transform:translateY(-4px) scale(1.02);
+    -moz-transform:translateY(-4px) scale(1.02);
+    -ms-transform:translateY(-4px) scale(1.02);
+    -o-transform:translateY(-4px) scale(1.02);
+    transform:translateY(-4px) scale(1.02);
+    -webkit-box-shadow:0 14px 24px rgba(62,57,107,.2);
+    box-shadow:0 14px 24px rgba(62,57,107,.2);
+    z-index:999
+}
+
+.headertop {
+    padding-top: 10px;
+}
+
+.card-title {
+    color: #39424e !important;
+    font-size: 20px;
+    padding-left: 15px;
+    margin: 0;
+    float: left;
+}
+
+#plus {
+    font-family: 'Bradley Hand ITC';
+    color: #00b050;
+}
+
+#hotel {
+    color: #002060;
+}
+
+#room {
+    color: #7030a0;
+}
+
+.metro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.card-recommended, .card-rec {
+    box-shadow: 0 6px 16px 0 rgba(115, 143, 147, .4);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.card {
+    box-shadow: 0 6px 16px 0 rgba(115,143,147,.4);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.top-most {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tips {
+    color: #738f93;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    opacity: .75;
+    font-size: 16px;
+    margin-left: 22px;
+    padding-top: 15px;
+}
+
+.action-btn-full, .action-btn-empty {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-color: #1ba94c;
+    width: 40%;
+    border-radius: 2px;
+    font-size: 20px;
+    font-weight: 700;
+    word-spacing: -2px;
+    cursor: pointer;
+    height: 50px;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px 22px 22px;
+    position: relative;
+    transition: all .5s ease;
+    transition-property: box-shadow,background,color,border;
+}
+
+.action-btn-full {
+    background: #1ba94c;
+    color: #fff;
+    box-shadow: 0 4px 12px 0 rgba(27,169,76,.5);
+}
+
+.action-btn-empty {
+    background: transparent;
+    color: #1ba94c;
+    border: 1px solid #1ba94c;
+}
+
+.card .one, .card-rec .one {
+    padding: 10px
+}
+
+.card .img, .card .XLimg, .card-rec .img, .card-rec .XLimg {
+    display: grid;
+    width: 100%;
+    justify-content: right;
+    align-content: right;
+}
+
+.img > img {
+    max-height: 30px;
+}
+
+.XLimg > img {
+    max-height: 35px;
+}
+
+@media (max-width: 991px) {
+    .action-btn-full, .action-btn-empty {
+        width: 70%;
+        font-size: 15px;
+        height: 45px;
+        margin: 10px 15px 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        padding-left: 10px;
+    }
+
+    .tips {
+        font-size: 13px;
+        margin-left: 22px;
+        padding-top: 15px;
+    }
+}
+
+@media(max-width: 730px) {
+    .metro {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        grid-row-gap: 20px;
+    }
+
+    .action-btn-full, .action-btn-empty {
+        width: 30%;
+        font-size: 15px;
+        height: 45px;
+        margin: 10px 15px 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 530px) {
+    .action-btn-full, .action-btn-empty {
+        width: 70%;
+        font-size: 15px;
+        height: 45px;
+        margin: 10px 15px 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        padding-left: 10px;
+    }
+}

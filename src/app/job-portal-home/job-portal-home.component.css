@@ -1,0 +1,72 @@
+.menu-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 10px 0;
+    padding: 0 40px;
+    background: #fff;
+    box-shadow: 0 4px 16px 0 #e7eeef;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+#search-logo {
+    font-size: 18px;
+}
+
+.tourism, .search, .vacancies {
+    padding: 30px 30px;
+    text-align: center;
+    border-left: 1px solid rgba(0, 176, 80, .2); 
+    border-right: 1px solid rgba(0, 176, 80, .2); 
+}
+.vacancies {
+ border-bottom: 7px solid #00b050;
+ background: rgba(0, 176, 80, .2);
+ color: #00b050;
+}
+.search, .tourism {
+ background: rgba(0, 176, 80, .1);
+}
+.active-menu {
+ border-bottom: 7px solid #00b050;
+ background: rgba(0, 176, 80, .3);
+ color: #00b050;
+}
+.inactive-menu {
+ background: rgba(0, 176, 80, .1);
+}
+
+.menu-bar span {
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+@media(max-width: 1300px) {
+    .menu-bar .tourism span:not(.mobile-info) {
+        display: none;
+    }
+    .menu-bar .search span:not(.mobile-info), .search br {
+        display: none;
+    }
+    .menu-bar .vacancies span:not(.mobile-info) {
+        display: none;
+    }
+    .tourism, .search, .vacancies {
+        padding: 20px 0px;
+    }
+}
+
+@media(max-width: 730px) {
+    .menu-bar span {
+        font-size: 17px;
+        letter-spacing: 0;
+    }
+    
+}
+
+@media(max-width: 530px) {
+    .menu-bar {
+        padding: 0;
+    }
+}

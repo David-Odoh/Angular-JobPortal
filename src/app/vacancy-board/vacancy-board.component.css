@@ -1,0 +1,48 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+}
+
+.side-bar {
+    padding: 10px 15px;
+}
+
+.metro {
+    grid-template-columns: 1fr;
+    padding: 30px;
+}
+
+.side-header {
+    color: #39424e;
+    font-size: 20px;
+    line-height: 1.3em;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.job-category {
+    border-bottom: 1px solid rgba(241, 240, 240, .5);
+    font-size: 16px;
+    padding: 15px;
+    color: #2d333d;
+}
+
+.job-category:hover, .job-category:focus {
+    background: #f3f7f7
+}
+
+.subcat {
+    padding: 5px 15px;
+    border-bottom: 1px solid rgba(241, 240, 240, .9);
+}
+
+.subcat a {
+    font-size: 14px;
+}
+
+.mobile-alt-bar {
+    background: #39424e;
+    height: 40px;
+}

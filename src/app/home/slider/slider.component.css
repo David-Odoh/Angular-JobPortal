@@ -1,0 +1,15 @@
+#slideshow0.owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 22px;
+    height: 6px;
+    border-radius: 0;
+    background-color: #75d39f !important;
+}
+
+#slideshow0 .owl-controls .owl-page.active span {
+    background-color: #00b050 !important;
+}
+
+#topDiv {
+    margin-bottom: 20px;
+}

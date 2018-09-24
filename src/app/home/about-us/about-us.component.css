@@ -1,0 +1,17 @@
+/* .grey-area {
+    padding: 14px 0;
+} */
+.custom-blue-area {
+    padding: 14px 0;
+    /* background: linear-gradient(140deg,#193b84 15%,#037bc1); */
+    background: linear-gradient(140deg,#002060 15%,#037bc1);
+}
+
+#about-us {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 11px;
+}

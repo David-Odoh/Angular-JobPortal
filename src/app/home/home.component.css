@@ -1,0 +1,21 @@
+.outerContainer {
+    box-sizing: border-box;
+    background: linear-gradient(90deg,#002060 15%,#037bc1);
+}
+
+.wrapper {
+    background-color: #f3f7f7;
+    margin: 0 5%
+}
+
+@media (max-width: 765px) {
+    .outerContainer {
+        box-sizing: border-box;
+        background-color: #f3f7f7;
+    }
+    
+    .wrapper {
+        background-color: #f3f7f7;
+        margin: 0;
+    }  
+}

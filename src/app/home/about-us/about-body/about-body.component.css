@@ -1,0 +1,31 @@
+.wrapper {
+    padding: 0 15px;
+}
+.ab-message, #about-us {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.ab-message {
+    padding-top: 12px;
+}
+
+#description {
+    padding: 25px;
+} 
+
+#subtitle {
+    padding: 15px 5px 0px !important;
+}
+
+
+#plus, #room, #hotel {
+    font-size: 18px;
+}
+
+/* For Small Screens */
+@media (max-width: 991px) {
+    #description {
+        padding: 15px;
+    } 
+}
+

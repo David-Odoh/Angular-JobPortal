@@ -1,0 +1,19 @@
+.four-images {
+    display: block;
+    text-align: center;
+}
+
+.four-images img {
+    max-height: 300px;
+}
+
+@media(max-width: 1125px) {
+    .four-images img {
+        max-height: 200px;
+    } 
+}
+@media(max-width: 999px) {
+    .four-images img {
+        max-height: 195px;
+    } 
+}
