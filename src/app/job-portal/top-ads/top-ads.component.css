@@ -2,3 +2,28 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+.ads-full-length {
+    display: grid;
+    grid-row-gap: 15px;
+    margin-bottom: 15px;
+}
+.ads-half-length {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    margin-bottom: 15px;
+}
+
+.ad1, .ad2, .ad3, .ad4 {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 80px;
+    font-style: italic;
+    border: 1px solid #A8A8AA;
+}
+
+.ad3, .ad4 {
+    height: 200px;
+}

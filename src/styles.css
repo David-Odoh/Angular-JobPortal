@@ -41,7 +41,7 @@ a {
     cursor: pointer;
 }
 
-a:hover, a:focus {
+alink:hover, alink:focus, a:hover, a:focus {
     color: #00b050 !important;
 }
 
@@ -177,6 +177,11 @@ a:hover, a:focus {
 
 .XLimg > img {
     max-height: 35px;
+}
+
+.read-more {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 @media (max-width: 991px) {

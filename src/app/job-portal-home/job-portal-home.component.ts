@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./job-portal-home.component.css']
 })
 export class JobPortalHomeComponent implements OnInit {
-
+  currentTab = 'vacancy-board'
   constructor() { }
 
   ngOnInit() {
   }
 
+  setTab(newText) {
+    this.currentTab = newText;
+  }
 }

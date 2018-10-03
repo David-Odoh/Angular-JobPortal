@@ -1,0 +1,92 @@
+[
+    {
+        "id": "34567",
+        "name": "Admin",
+        "subcat": [
+            {
+                "subcatName": "Consultants"
+            },
+            {
+                "subcatName": "General Managers (Expatriates)"
+            },
+            {
+                "subcatName": "General Managers"
+            },
+            {
+                "subcatName": "Assistant General Managers"
+            },
+            {
+                "subcatName": "Executive Assistant Managers"
+            },
+            {
+                "subcatName": "Hotel Managers"
+            },
+            {
+                "subcatName": "Night Duty Managers/Auditors"
+            },
+            {
+                "subcatName": "HR/Admin. Officers"
+            }
+        ]
+    },
+    {
+        "id": "38767",
+        "name": "Operations",
+        "subcat": [
+            {
+                "subcatName": "General Manager (Operations)"
+            },
+            {
+                "subcatName": "Operations Managers"
+            },
+            {
+                "subcatName": "Operations Supervisors"
+            }
+        ]
+    },
+    {
+        "id": "32767",
+        "name": "F & B",
+        "subcat": [
+            {
+                "subcatName": "F & B Managers"
+            },
+            {
+                "subcatName": "F & B Supervisors"
+            }
+        ]
+    },
+    {
+        "id": "327563",
+        "name": "Restaurant",
+        "subcat": [
+            {
+                "subcatName": "Restaurant Managers"
+            },
+            {
+                "subcatName": "Restaurant Supervisors"
+            },
+            {
+                "subcatName": "Waiters/Waitresses"
+            }
+        ]
+    },
+    {
+        "id": "3401563",
+        "name": "Bar",
+        "subcat": [
+            {
+                "subcatName": "Bar Managers"
+            },
+            {
+                "subcatName": "Bar Supervisors"
+            },
+            {
+                "subcatName": "Bartenders/Barmen"
+            },
+            {
+                "subcatName": "Waiters/Waitresses"
+            }
+        ]
+    }
+]

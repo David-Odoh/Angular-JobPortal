@@ -1,0 +1,118 @@
+.job-list {
+    list-style: disc; 
+}
+
+.job-list-item {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    border: 1px solid #C2C7D0;
+    border-radius: 10px;
+    list-style-type: none;
+    background: #ffffff;
+    margin-top: 15px;
+}
+
+.job-row-one {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.job-row-one, .job-row-two {
+    height: auto;
+    padding: 15px 20px;
+}
+
+.job-list-item:hover, .job-list-item:focus {
+    border: 1px solid #424242;
+}
+
+.job-row-two {
+    border-top: 1px solid #DEDFE2;
+}
+
+.job-title, .date-posted, .job-description, .menu-btn {
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height: 18px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.job-title {
+    display: grid;
+    justify-content: left;
+    align-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #39424e;
+}
+
+.date-posted {
+    display: grid;
+    justify-content: right;
+    align-content: center;
+}
+
+.job-description {
+    border: 1px solid #13A853;
+    border-radius: 2px;
+    color: #fff;
+    background: #2ec866;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), inset 0 -1px 4px rgba(151,159,175,0.2);
+    text-decoration: none !important;
+    padding: 10px 15px;
+    margin-bottom: 0;
+}
+
+.job-description:hover,
+.job-description:focus {
+    background: #1ba94c;
+}
+
+.featured {
+    font-weight: 700;
+    font-style: italic;
+    color: #1ba94c;
+}
+
+.menu-btn {
+    border: 1px solid #13A853;
+    border-radius: 2px;
+    color: #fff;
+    background: #2ec866;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), inset 0 -1px 4px rgba(151,159,175,0.2);
+    text-decoration: none !important;
+    padding: 10px 15px;
+    margin-bottom: 0; 
+    width: 200px;
+    font-size: 18px; 
+}
+
+.displayed-result-flag {
+    text-align: center;
+}
+
+@media (max-width: 620px) {
+    .job-description {
+        display: none;
+    }
+    .job-row-one {
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .job-row-one {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+
+    .date-posted {
+        justify-content: left;
+    }
+    
+}

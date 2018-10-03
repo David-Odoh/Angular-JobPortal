@@ -1,0 +1,17 @@
+<ul class="job-list" *ngIf="vacancyInfo">
+  <h3 class="displayed-result-flag">{{vacancyInfo.title}} Job Recruitment (Full Job Description)</h3>
+  <li class="job-list-item">
+    <div>
+      <div class="job-row-one">
+        <div class="job-title">{{vacancyInfo.title}} Job Recruitment ({{vacancyInfo.avPositions}} Positions)</div>
+        <div class="date-posted">{{vacancyInfo.datePosted}}</div>
+      </div>
+    </div>
+    <div>
+      <div class="job-row-two">
+        <h4 class="featured">{{vacancyInfo.vacancyType}}</h4>
+        <p>{{vacancyInfo.details}}</p>
+      </div>
+    </div>
+  </li>
+</ul>

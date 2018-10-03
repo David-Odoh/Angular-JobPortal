@@ -1,0 +1,18 @@
+<ul class="job-list">
+  <h3 class="displayed-result-flag">{{filterBy}} Jobs</h3>
+  <li class="job-list-item" *ngFor="let vacancy of (_vacancies | filter:filterBy); let j = index">
+    <div data-toggle="collapse" [attr.data-target]="'#v-accordion' + j" class="clickable">
+      <div class="job-row-one">
+        <div class="job-title">{{vacancy.title}} Job Recruitment ({{vacancy.avPositions}} Positions)</div>
+        <div class="date-posted">{{vacancy.datePosted}}</div>
+        <div class="job-description">Description</div>
+      </div>
+    </div>
+    <div id="v-accordion{{j}}" class="collapse">
+      <div class="job-row-two">
+        <h4 class="featured">{{vacancy.vacancyType}}</h4>
+        <p>{{vacancy.details | slice:0:230}}...</p><a class="read-more" routerLink="../job-details/{{vacancy._id}}">Read more here...</a>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -2,12 +2,13 @@
 
 <div class="wrapper">
   <div class="menu-bar">
-    <div class="tourism">
+    <div class="tourism inactive-menu" routerLink="tourism-info" [ngClass]="{'active-menu': currentTab==='tourism-info'}" (click)="setTab('tourism-info')">
       <span>Nigerian Hospitality and
       </span>
       <span class="mobile-info">Tourism Info</span>
     </div>
-    <div class="search">
+    <div class="search inactive-menu" routerLink="vacancy-search" [ngClass]="{'active-menu': currentTab==='vacancy-search'}"
+      (click)="setTab('vacancy-search')">
       <span id="search-logo" class="">
         <span id="hotel">HOTEL</span>
       <span id="room">ROOM</span>
@@ -17,7 +18,8 @@
       </span>
       <span>Great Job.</span>
     </div>
-    <div class="vacancies">
+    <div class="vacancies inactive-menu" routerLink="vacancy-board" [ngClass]="{'active-menu': currentTab==='vacancy-board'}"
+      (click)="setTab('vacancy-board')">
       <span>Post Hospitality, Tourism and other </span>
       <span class="mobile-info">Job Vacancies </span>
       <span>free</span>
@@ -25,5 +27,6 @@
   </div>
 </div>
 
-<!-- Vacancies and Job Searches -->
-<app-vacancy-board></app-vacancy-board>
+<!-- Vacancies / Job Searches / Tourism Info -->
+<router-outlet></router-outlet>
+<!-- <app-vacancy-board></app-vacancy-board> -->

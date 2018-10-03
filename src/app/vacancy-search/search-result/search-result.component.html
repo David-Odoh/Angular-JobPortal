@@ -1,0 +1,17 @@
+<ul class="job-list">
+  <li class="job-list-item" *ngFor="let preloadedVacancy of preloadedVacancies ; let j = index">
+    <div data-toggle="collapse" [attr.data-target]="'#v-accordion' + j" class="clickable">
+      <div class="job-row-one">
+        <div class="job-title">{{preloadedVacancy.title}} Job Recruitment ({{preloadedVacancy.avPositions}} Positions)</div>
+        <div class="date-posted">{{preloadedVacancy.datePosted}}</div>
+        <div class="job-description">Description</div>
+      </div>
+    </div>
+    <div id="v-accordion{{j}}" class="collapse">
+      <div class="job-row-two">
+        <h4 class="featured">{{preloadedVacancy.preloadedVacancyType}}</h4>
+        <p>{{preloadedVacancy.details | slice:0:230}}...</p><a class="read-more" routerLink="../job-details/{{preloadedVacancy._id}}">Read more here...</a>
+      </div>
+    </div>
+  </li>
+</ul>

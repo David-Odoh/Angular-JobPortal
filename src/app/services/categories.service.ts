@@ -12,7 +12,7 @@ export class CategoriesService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  BASE_URL = '../../assets/data';
+  BASE_URL = 'assets/data';
   constructor(private http: HttpClient) { }
 
 

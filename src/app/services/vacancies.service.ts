@@ -17,7 +17,7 @@ export class VacanciesService {
   private filterBy = 'All';
   private search = '';
 
-  BASE_URL = '../../assets/data';
+  BASE_URL = 'assets/data';
 
 
   public constructor(private http: HttpClient) {
@@ -28,7 +28,8 @@ export class VacanciesService {
   }
 
   getAllVacancies() {
-    return this.allVacancies.slice();
+    if (this.allVacancies) return this.allVacancies.slice();
+    return [];
   }
 
   getVacancies(): Observable<any> {
@@ -37,6 +38,22 @@ export class VacanciesService {
       map(res => { return res }),
       catchError(this.handleError)
       );
+  }
+
+  getVacancyDetails(id: string) {
+    // return this.http.get(`${this.BASE_URL}/vacancies.json/${id}`)
+    //   .pipe(
+    //   map(res => { return res }),
+    //   catchError(this.handleError)
+    //   );
+    const _vacancies = this.getAllVacancies().slice();
+
+    if (id) {
+      console.log(_vacancies.find(vac => vac._id == id));
+      const result = _vacancies.find(vac => vac._id == id)
+      return result;
+    }
+    return null;
   }
 
   setFilter(filterValue: string) {
@@ -66,7 +83,7 @@ export class VacanciesService {
         `Server returned code ${error.status}, ` +
         `body was: ${error.error}`);
       if (error.status == 404) {
-        return throwError('User Not Found!');
+        return throwError('Resource Not Found!');
       }
     }
     return throwError('Oops, unable to complete! please try again later.');

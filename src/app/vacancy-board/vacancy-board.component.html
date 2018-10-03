@@ -1,97 +1,36 @@
 <!-- Mobile View -->
-<div class="mobile-alt-bar">
+<div class="mobile-vacancy-cat-bar">
   <div class="menu-btn">
     <span>Job Categories</span>
   </div>
   <div class="mobile-menu-dropdown"></div>
 </div>
 <!-- Standard View -->
-<div class="wrapper">
+<div class="wrapper animated fadeIn">
   <aside>
     <div class="side-bar">
       <div class="side-header">
-        <span>Hospitality and Tourism Jobs</span>
+        <a (click)="resetFilters()">Hospitality and Tourism Jobs</a>
       </div>
-      <div class="side-body">
-        <div data-toggle="collapse" data-target="#accordion" class="clickable">
+      <div class="side-body" *ngFor="let category of _categories; let i = index;">
+        <div data-toggle="collapse" [attr.data-target]="'#' + i" class="clickable" aria-expanded="true">
           <div class="job-category card">
-            <span>Admin</span>
+            <span>{{category.name}}</span>
           </div>
         </div>
-        <div id="accordion" class="collapse">
-          <div class="subcat">
-            <a>Consultants</a>
+        <!-- THIS MAKES WE ARE ON THE 'JOB LISTING' VIEW -->
+        <div id="{{i}}" class="collapse in" routerLink="job-listing">
+          <div class="subcat" *ngFor="let subcat of category.subcat">
+            <a (click)="setFilter('' + subcat.subcatName)">{{subcat.subcatName}}</a>
           </div>
-          <div class="subcat">
-            <a>General Managers (Expatriates)</a>
-          </div>
-          <div class="subcat">
-            <a>General Managers</a>
-          </div>
-        </div>
-
-        <div data-toggle="collapse" data-target="#accordion1" class="clickable">
-          <div class="job-category card">
-            <span>Operations</span>
-          </div>
-        </div>
-        <div id="accordion1" class="collapse">
-          <div class="subcat">
-            <a>Consultants</a>
-          </div>
-          <div class="subcat">
-            <a>General Managers (Expatriates)</a>
-          </div>
-          <div class="subcat">
-            <a>General Managers</a>
-          </div>
-        </div>
-
-
-        <div class="job-category card">
-          <span>F & B</span>
-        </div>
-        <div class="job-category card">
-          <span>Kitchen</span>
         </div>
       </div>
     </div>
   </aside>
   <div class="main-job-area">
-    <ul class="job-list">
-      <li class="job-list-item">
-        <div data-toggle="collapse" data-target="#job-row1" class="clickable">
-          <div class="job-row-one">
-            <div class="job-title">IHS Towers Job Recruitment (3 Positions)</div>
-            <div class="date-posted">Oct 2nd, 4:00 pm GMT</div>
-            <div class="job-description">Description</div>
-          </div>
-        </div>
-        <div id="job-row1" class="collapse">
-          <div class="job-row-two">
-            <h4 class="featured">featured</h4>
-            <p>HS Towers, the largest independent mobile telecommunications infrastructure provider in Europe, Africa and the
-              Middle East, is currently seeking applications from suitably qualified candidates to fill the following positions</p><a>Read More...</a>
-          </div>
-        </div>
-      </li>
-      <li class="job-list-item">
-        <div data-toggle="collapse" data-target="#job-row2" class="clickable">
-          <div class="job-row-one">
-            <div class="job-title">
-              MainOne Cable Nigeria Job Recruitment (5 Positions)</div>
-            <div class="date-posted">Oct 2nd, 4:00 pm GMT</div>
-            <div class="job-description">Description</div>
-          </div>
-        </div>
-        <div id="job-row2" class="collapse">
-          <div class="job-row-two">
-            <h4 class="featured">featured</h4>
-            <p>HS Towers, the largest independent mobile telecommunications infrastructure provider in Europe, Africa and the
-              Middle East, is currently seeking applications from suitably qualified candidates to fill the following positions</p><a>Read More...</a>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <router-outlet></router-outlet>
+  </div>
+  <div class="sideAds-2">
+    <span>(Space for paid ad)</span>
   </div>
 </div>

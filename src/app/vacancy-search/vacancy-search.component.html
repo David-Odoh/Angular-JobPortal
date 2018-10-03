@@ -1,0 +1,21 @@
+<div class="wrapper animated fadeIn">
+  <div class="sideAds-1">
+    <span>(Space for paid ad)</span>
+  </div>
+  <div class="main-area">
+    <div class="search-bar">
+      <input type="text" class="search-box" placeholder="Great Job Search..." (keyup)="setSearchFilter($event.target.value)" #searchInput>
+    </div>
+    <div class="search-result">
+      <div class="when-empty">
+        <h1>Amazing Job Search</h1>
+      </div>
+      <div class="job-listing">
+        <app-search-result [preloadedVacancies]="preloadedVacancies"></app-search-result>
+      </div>
+    </div>
+  </div>
+  <div class="sideAds-2">
+    <span>(Space for paid ad)</span>
+  </div>
+</div>

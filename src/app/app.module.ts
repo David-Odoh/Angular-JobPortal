@@ -1,6 +1,9 @@
+import { VacanciesService } from './services/vacancies.service';
+import { CategoriesService } from './services/categories.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,12 +20,36 @@ import { TopAdsComponent } from './job-portal/top-ads/top-ads.component';
 import { MobileLoginComponent } from './job-portal/mobile-login/mobile-login.component';
 import { JobPortalHomeComponent } from './job-portal-home/job-portal-home.component';
 import { VacancyBoardComponent } from './vacancy-board/vacancy-board.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+import { VacancySearchComponent } from './vacancy-search/vacancy-search.component';
+import { TourismInfoComponent } from './tourism-info/tourism-info.component';
+import { VacancyListingComponent } from './vacancy-board/vacancy-listing/vacancy-listing.component';
+import { VacancyDetailsComponent } from './vacancy-board/vacancy-details/vacancy-details.component';
+import { SearchResultComponent } from './vacancy-search/search-result/search-result.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'job-portal', component: JobPortalHomeComponent },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  {
+    path: 'job-portal',
+    component: JobPortalHomeComponent,
+    children: [
+      { path: '', redirectTo: 'vacancy-board/job-listing', pathMatch: 'full' },
+      {
+        path: 'vacancy-board',
+        component: VacancyBoardComponent,
+        children: [
+          { path: '', component: VacancyListingComponent },
+          { path: 'job-listing', component: VacancyListingComponent },
+          { path: 'job-details/:id', component: VacancyDetailsComponent }
+        ]
+      },
+      { path: 'vacancy-search', component: VacancySearchComponent },
+      { path: 'tourism-info', component: TourismInfoComponent }
+    ]
+  },
+  // { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -41,13 +68,21 @@ const appRoutes: Routes = [
     TopAdsComponent,
     MobileLoginComponent,
     JobPortalHomeComponent,
-    VacancyBoardComponent
+    VacancyBoardComponent,
+    FilterPipe,
+    SearchPipe,
+    VacancySearchComponent,
+    TourismInfoComponent,
+    VacancyListingComponent,
+    VacancyDetailsComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [CategoriesService, VacanciesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
