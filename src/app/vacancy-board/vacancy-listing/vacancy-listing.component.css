@@ -47,6 +47,7 @@
 
 .job-title {
     display: grid;
+    grid-auto-flow: column;
     justify-content: left;
     align-content: center;
     font-size: 18px;

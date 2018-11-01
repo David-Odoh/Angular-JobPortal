@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VacanciesService } from './../../services/vacancies.service';
 import { VacancyModel } from './../../models/job-vacancy';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vacancy-listing',
@@ -11,7 +12,7 @@ export class VacancyListingComponent implements OnInit {
   _vacancies: VacancyModel[];
   filterBy: string;
 
-  constructor(public vacService: VacanciesService) { }
+  constructor(public vacService: VacanciesService, public router: Router) { }
 
   ngOnInit() {
     this.filterBy = this.vacService.getFilter();
@@ -29,6 +30,16 @@ export class VacancyListingComponent implements OnInit {
         this.filterBy = filterValue;
       }
     );
+  }
+
+  checkForChildrenB4Routing(children, _id) {
+    if (children.length) {
+      console.log('Has children', children);
+      this.router.navigate([`/job-portal/vacancy-board/job-collection/${_id}`]);
+    } else {
+      console.log('Doesnt have children');
+      this.router.navigate([`/job-portal/vacancy-board/job-details/${_id}`]);
+    }
   }
 
 }

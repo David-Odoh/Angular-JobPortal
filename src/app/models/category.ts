@@ -1,7 +1,7 @@
 export class category {
     id: string;
     name: string;
-    subcat: {
+    subcat: [{
         subcatName: string
-    };
+    }];
 }

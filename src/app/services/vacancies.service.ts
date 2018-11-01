@@ -17,7 +17,8 @@ export class VacanciesService {
   private filterBy = 'All';
   private search = '';
 
-  BASE_URL = 'assets/data';
+  // BASE_URL = 'assets/data';
+  BASE_URL = 'http://localhost:5000/v1';
 
 
   public constructor(private http: HttpClient) {
@@ -32,10 +33,24 @@ export class VacanciesService {
     return [];
   }
 
-  getVacancies(): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/vacancies.json`)
+  getVacancies(page = 1, perPage = 30): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/vacancy/parents?page=${page}&perPage=${perPage}`)
       .pipe(
-      map(res => { return res }),
+      map(res => {
+        console.log('vacancies', res);
+        return res
+      }),
+      catchError(this.handleError)
+      );
+  }
+
+  getSingleVacancy(page = 1, perPage = 30, id) {
+    return this.http.get(`${this.BASE_URL}/vacancy/single?page=${page}&perPage=${perPage}&id=${id}`)
+      .pipe(
+      map(res => {
+        console.log('vacancy', res);
+        return res
+      }),
       catchError(this.handleError)
       );
   }

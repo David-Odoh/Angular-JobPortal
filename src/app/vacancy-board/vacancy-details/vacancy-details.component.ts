@@ -19,10 +19,6 @@ export class VacancyDetailsComponent implements OnInit {
   }
 
   getVacancyDetails(id) {
-    // this.vacService.getVacancyDetails(id).subscribe((_data) => {
-    //   this.vacancyInfo = _data;
-    //   console.log(this.vacancyInfo);
-    // });
     this.vacancyInfo = this.vacService.getVacancyDetails(id);
   }
 }

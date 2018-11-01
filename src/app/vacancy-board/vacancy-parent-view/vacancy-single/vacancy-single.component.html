@@ -1,4 +1,4 @@
-<ul class="job-list" *ngIf="vacancyInfo">
+<ul class="job-list" *ngFor="let vacancyInfo of (vacancyInfos); let j = index">
   <h3 class="displayed-result-flag">{{vacancyInfo.title}} Job Recruitment &nbsp;<span *ngIf="vacancyInfo.recruiter">at {{vacancyInfo.recruiter}}</span> (Full
     Job Description)</h3>
   <li class="job-list-item">

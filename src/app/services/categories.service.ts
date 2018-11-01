@@ -12,15 +12,18 @@ export class CategoriesService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  BASE_URL = 'assets/data';
+  // BASE_URL = 'assets/data';
+  BASE_URL = 'http://localhost:5000/v1';
   constructor(private http: HttpClient) { }
 
 
   // GET: ALL COOPERATIVES
   getCategories(): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/categories.json`)
+    return this.http.get(`${this.BASE_URL}/category`, this.httpHeaders)
       .pipe(
-      map(res => { return res }),
+      map(res => {
+        console.log(res);
+       return res }),
       catchError(this.handleError)
       );
   }

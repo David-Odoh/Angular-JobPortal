@@ -11,8 +11,11 @@ export class FilterPipe implements PipeTransform {
       return vacancies;
     } else {
       if (vacancies) {
+        console.log('Filter vals', vacancies);
+        console.log('Filter val', subcat);
+
         return vacancies.filter(vacancy => {
-          return vacancy.category.subcat.subcatName === subcat;
+          return vacancy.subcat.subcatName === subcat;
         });
       }
     }

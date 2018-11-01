@@ -3,15 +3,16 @@
   <li class="job-list-item" *ngFor="let vacancy of (_vacancies | filter:filterBy); let j = index">
     <div data-toggle="collapse" [attr.data-target]="'#v-accordion' + j" class="clickable">
       <div class="job-row-one">
-        <div class="job-title">{{vacancy.title}} Job Recruitment ({{vacancy.avPositions}} Positions)</div>
-        <div class="date-posted">{{vacancy.datePosted}}</div>
+        <div class="job-title">{{vacancy.title}} Job Recruitment &nbsp;<span *ngIf="vacancy.children.length">({{vacancy.availablePositions}} Positions)</span></div>
+        <div class="date-posted"><span style="font-style:italic">Posted on: </span>{{vacancy.updatedAt | date}}</div>
         <div class="job-description">Description</div>
       </div>
     </div>
     <div id="v-accordion{{j}}" class="collapse">
       <div class="job-row-two">
         <h4 class="featured">{{vacancy.vacancyType}}</h4>
-        <p>{{vacancy.details | slice:0:230}}...</p><a class="read-more" routerLink="../job-details/{{vacancy._id}}">Read more here...</a>
+        <!-- <p>{{vacancy.details | slice:0:230}}...</p><a class="read-more" routerLink="../job-details/{{vacancy._id}}">Read more here...</a> -->
+        <p>{{vacancy.details | slice:0:230}}...</p><a class="read-more" (click)="checkForChildrenB4Routing(vacancy.children, vacancy._id)">Read more here...</a>
       </div>
     </div>
   </li>

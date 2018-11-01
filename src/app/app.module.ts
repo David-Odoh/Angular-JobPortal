@@ -3,7 +3,8 @@ import { CategoriesService } from './services/categories.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,8 @@ import { TourismInfoComponent } from './tourism-info/tourism-info.component';
 import { VacancyListingComponent } from './vacancy-board/vacancy-listing/vacancy-listing.component';
 import { VacancyDetailsComponent } from './vacancy-board/vacancy-details/vacancy-details.component';
 import { SearchResultComponent } from './vacancy-search/search-result/search-result.component';
+import { VacancyParentViewComponent } from './vacancy-board/vacancy-parent-view/vacancy-parent-view.component';
+import { VacancySingleComponent } from './vacancy-board/vacancy-parent-view/vacancy-single/vacancy-single.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,7 +45,9 @@ const appRoutes: Routes = [
         children: [
           { path: '', component: VacancyListingComponent },
           { path: 'job-listing', component: VacancyListingComponent },
-          { path: 'job-details/:id', component: VacancyDetailsComponent }
+          { path: 'job-details/:id', component: VacancyDetailsComponent },
+          { path: 'job-single/:id', component: VacancySingleComponent },
+          { path: 'job-collection/:id', component: VacancyParentViewComponent }
         ]
       },
       { path: 'vacancy-search', component: VacancySearchComponent },
@@ -75,12 +80,15 @@ const appRoutes: Routes = [
     TourismInfoComponent,
     VacancyListingComponent,
     VacancyDetailsComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    VacancyParentViewComponent,
+    VacancySingleComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    SlimLoadingBarModule
   ],
   providers: [CategoriesService, VacanciesService],
   bootstrap: [AppComponent]

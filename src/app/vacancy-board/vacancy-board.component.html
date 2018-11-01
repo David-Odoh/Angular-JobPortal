@@ -21,7 +21,7 @@
         <!-- THIS MAKES WE ARE ON THE 'JOB LISTING' VIEW -->
         <div id="{{i}}" class="collapse in" routerLink="job-listing">
           <div class="subcat" *ngFor="let subcat of category.subcat">
-            <a (click)="setFilter('' + subcat.subcatName)">{{subcat.subcatName}}</a>
+            <a (click)="setFilter('' + subcat)">{{subcat}}</a>
           </div>
         </div>
       </div>
